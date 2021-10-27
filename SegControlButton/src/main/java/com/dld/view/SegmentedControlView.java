@@ -254,6 +254,15 @@ public class SegmentedControlView extends View implements ISegmentedControl{
         invalidate();
     }
 
+    public void setItems(List<SegmentedControlItem> list) {
+        if(list == null)
+            throw new IllegalArgumentException("list is null");
+        mSegmentedControlItems.clear();
+        mSegmentedControlItems.addAll(list);
+        requestLayout();
+        invalidate();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
